@@ -93,7 +93,7 @@ namespace Core
                 else
                     sum += number[i];
             }
-            return (sum % 10 == 0);
+            return (sum % 2 == 0);
         }
         public string ChargeCard(decimal ChargeAmount)
         {

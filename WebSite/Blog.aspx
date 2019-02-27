@@ -7,6 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>
         WebGoat.Net Blog</h1>
+    <a href="BlogCreate.aspx">Write a blog entry</a>
     <div id="entriesDiv" runat="server">
     </div>
 </asp:Content>
