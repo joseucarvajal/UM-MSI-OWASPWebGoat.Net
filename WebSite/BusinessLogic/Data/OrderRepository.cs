@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core;
+using System.Data.Entity;
 
 namespace Infrastructure
 {
@@ -16,9 +17,19 @@ namespace Infrastructure
         public Order GetOrderById(int OrderId)
         {
             _customerRepository = new CustomerRepository();
-            var order = _context.Orders.Single(o => o.OrderId == OrderId);
+            var order = _context.Orders.Include(o=>o.OrderDetails).Single(o => o.OrderId == OrderId);
+
             if (order.CustomerId.Length > 0)
                 order.Customer = _customerRepository.GetCustomerByCustomerId(order.CustomerId);
+
+            if(order.OrderDetails != null && order.OrderDetails.Count() > 0)
+            {
+                foreach(OrderDetail orderDetail in order.OrderDetails)
+                {
+                    _context.Entry(orderDetail).Reload();
+                }                
+            }
+
             return order;
         }
         public int CreateOrder(Order Order)
@@ -64,7 +75,7 @@ namespace Infrastructure
         }
         public ICollection<Order> GetAllOrdersByCustomerId(string CustomerId)
         {
-            return _context.Orders.Where(o => o.CustomerId == CustomerId).OrderByDescending(o => o.OrderDate).ToList();
+            return _context.Orders.Where(o => o.CustomerId == CustomerId).OrderByDescending(o => o.OrderDate).AsNoTracking().ToList();
         }
         public Shipment GetShipmentByOrderId(int OrderId)
         {

@@ -61,7 +61,7 @@ namespace Core
             {
                 sb.AppendFormat("<table class='{0}'>", CssClass);
                 sb.Append("<tr><th>Product Id</th><th>Product Name</th><th>Unit Price</th><th>Quantity</th><th>Extended Price</th></tr>");
-            }
+            }            
             foreach (var od in OrderDetails)
             {
                 sb.AppendFormat("<tr><td><a href='/Product/{0}' runat='server'>{0}</a></td><td>{1}</td><td style='text-align: right;'>{2:C}</td><td style='text-align: right;'>{3}</td><td style='text-align: right;'>{4:C}</td></tr>",
