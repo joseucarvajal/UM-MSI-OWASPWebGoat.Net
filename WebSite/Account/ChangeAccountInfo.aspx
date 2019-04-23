@@ -20,19 +20,19 @@
         <legend>My address information</legend>
         <asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
         <br />
-        <asp:TextBox ID="txtAddress" runat="server" CssClass="textEntry"></asp:TextBox><br />
+        <asp:TextBox ID="txtAddress" runat="server" CssClass="textEntry" MaxLength="60"></asp:TextBox><br />
         <asp:Label ID="lblCity" runat="server" Text="City"></asp:Label>
         <br />
-        <asp:TextBox ID="txtCity" runat="server" CssClass="textEntry"></asp:TextBox><br />
+        <asp:TextBox ID="txtCity" runat="server" CssClass="textEntry" MaxLength="15"></asp:TextBox><br />
         <asp:Label ID="Label2" runat="server" Text="Region/State"></asp:Label>
         <br />
-        <asp:TextBox ID="txtRegion" runat="server" CssClass="textEntry"></asp:TextBox><br />
+        <asp:TextBox ID="txtRegion" runat="server" CssClass="textEntry" MaxLength="15"></asp:TextBox><br />
         <asp:Label ID="Label3" runat="server" Text="Postal Code"></asp:Label>
         <br />
-        <asp:TextBox ID="txtPostalCode" runat="server" CssClass="textEntry"></asp:TextBox><br />
+        <asp:TextBox ID="txtPostalCode" runat="server" CssClass="textEntry" MaxLength="10"></asp:TextBox><br />
         <asp:Label ID="Label4" runat="server" Text="Country"></asp:Label>
         <br />
-        <asp:TextBox ID="txtCountry" runat="server" CssClass="textEntry"></asp:TextBox>
+        <asp:TextBox ID="txtCountry" runat="server" CssClass="textEntry" MaxLength="15"></asp:TextBox>
         <br />
     </fieldset>
     <asp:Button ID="btnUpdate" runat="server" Text="Update" 

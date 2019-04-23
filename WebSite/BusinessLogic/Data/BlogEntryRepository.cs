@@ -34,7 +34,7 @@ namespace Infrastructure
         public List<BlogEntry> GetTopBlogEntries(int NumberOfEntries, int StartPosition)
         {
 
-            var blogEntries = _context.BlogEntries.OrderByDescending(b => b.PostedDate).Skip(StartPosition).Take(NumberOfEntries);
+            var blogEntries = _context.BlogEntries.OrderByDescending(b => b.Id).Skip(StartPosition).Take(NumberOfEntries);
             return blogEntries.ToList();
         }
     }

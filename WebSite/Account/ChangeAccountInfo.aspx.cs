@@ -45,7 +45,7 @@ namespace WebSite.Account
                 _customerRepository.SaveCustomer(_customer);
                 lblFeedback.Text = "Your information has been updated.";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 lblFeedback.Text = "An error has occurred in saving.  Please try again.";
             }

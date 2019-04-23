@@ -9,7 +9,7 @@ namespace WebSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var sessionCookie = new HttpCookie("SessionId", Session.SessionID);
+            var sessionCookie = new HttpCookie("SessionId", Session.SessionID);            
             Response.Cookies.Add(sessionCookie);
 
             string output = string.Empty;

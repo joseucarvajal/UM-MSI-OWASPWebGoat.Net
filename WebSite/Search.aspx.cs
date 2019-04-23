@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Web.UI.WebControls;
 using Infrastructure;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace WebSite
 {
